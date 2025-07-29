@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 In 1 Electric Shaver - Cukur Praktis, Gaya Maksimal! | Indomarket</title>
+    <meta name="description" content="5 In 1 Electric Shaver dengan 5 kepala berbeda untuk perawatan wajah lengkap. Desain ergonomis & tahan air. Diskon spesial hari ini!">
+    <meta name="keywords" content="electric shaver, cukur praktis, perawatan wajah pria, alat cukur, trimmer">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #4a4a4a;
+            --light-gray: #9a9a9a;
+            --white: #ffffff;
+            --silver: #c0c0c0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--silver);
+            border-radius: 3px;
+        }
+        
+        /* Loading animation */
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--silver);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Hero overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button hover effects */
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-hover-effect:hover::before {
+            left: 100%;
+        }
+        
+        /* Countdown timer */
+        .countdown-timer {
+            background: linear-gradient(135deg, #ff4757, #ff3838);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Trust badges */
+        .trust-badge {
+            background: var(--white);
+            border: 2px solid var(--silver);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Gallery lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+        
+        /* Social proof popup */
+        .social-proof-popup {
+            position: fixed;
+            top: 20px;
+            right: -400px;
+            background: white;
+            border-left: 4px solid var(--silver);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 350px;
+            z-index: 999;
+            transition: all 0.5s ease;
+        }
+        
+        .social-proof-popup.show {
+            right: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .social-proof-popup {
+                max-width: 280px;
+                font-size: 14px;
+            }
+        }
+        
+        /* OrderOnline form styling */
+        .ooef .orderonline-embed-form {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,240,240,0.9));
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(192,192,192,0.3);
+        }
+        
+        .ooef .ooef-loader {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+        }
+        
+        /* Testimonial carousel */
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .testimonial-card {
+                flex: 0 0 calc(33.333% - 14px);
+                max-width: calc(33.333% - 14px);
+            }
+        }
+        
+        /* Star rating */
+        .star-rating {
+            color: #ffd700;
+            font-size: 16px;
+        }
+        
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 998;
+        }
+        
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-cormorant text-2xl font-bold text-gray-900">Indomarket</div>
+                <div class="hidden md:block">
+                    <a href="#features" class="px-4 py-2 text-gray-700 hover:text-gray-900 transition">Fitur</a>
+                    <a href="#testimonials" class="px-4 py-2 text-gray-700 hover:text-gray-900 transition">Testimoni</a>
+                    <a href="#order" class="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">Pesan Sekarang</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-40 hidden">
+        <div class="absolute right-0 top-0 w-64 h-full bg-white p-6">
+            <button onclick="toggleMobileMenu()" class="absolute top-4 right-4">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="mt-12 space-y-4">
+                <a href="#features" onclick="toggleMobileMenu()" class="block text-lg">Fitur</a>
+                <a href="#testimonials" onclick="toggleMobileMenu()" class="block text-lg">Testimoni</a>
+                <a href="#order" onclick="toggleMobileMenu()" class="block bg-black text-white text-center py-3 rounded-full">Pesan Sekarang</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://cdn.hotishop.com/image/2022/10/4c0d025b5d48443edc97c2a080018f3b8196ccd565e8f11508a3e7be760c60a3-600.jpeg" 
+                 alt="5 In 1 Electric Shaver" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto" data-aos="fade-up">
+            <h1 class="font-cormorant text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                5 In 1 Electric Shaver
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Cukur Praktis, Gaya Maksimal! Satu alat untuk semua kebutuhan perawatan wajah Anda
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div class="text-3xl font-bold text-red-400 line-through">Rp 349.000</div>
+                <div class="text-4xl font-bold text-green-400">Rp 225.000</div>
+            </div>
+            
+            <div class="mt-8">
+                <button onclick="scrollToOrder()" class="bg-black text-white px-8 py-4 rounded-full text-lg font-semibold btn-hover-effect">
+                    Pesan Sekarang - Diskon 35%
+                </button>
+            </div>
+            
+            <div class="mt-6 flex justify-center items-center space-x-4 text-sm">
+                <span class="flex items-center">
+                    <i class="fas fa-eye mr-2"></i>
+                    124 pengunjung aktif
+                </span>
+                <span class="flex items-center">
+                    <i class="fas fa-users mr-2"></i>
+                    500+ rekomendasi Facebook
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-cormorant text-4xl font-bold text-center mb-12" data-aos="fade-up">Galeri Produk</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://cdn.hotishop.com/image/1f0c5de9d8b0b500df09773a2fb973fb08d0c7e1-600.png" 
+                     alt="Product 1" 
+                     class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition"
+                     onclick="openLightbox(this.src)">
+                <img src="https://cdn.hotishop.com/image/2022/10/208923d229d7798fa048d5208b5c72533dee914699924231dfcddbd903846628-600.jpeg" 
+                     alt="Product 2" 
+                     class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition"
+                     onclick="openLightbox(this.src)">
+                <img src="https://cdn.hotishop.com/image/2022/10/60f30b844900ab56b63e2429c723cf0caab26546418bf8a99fb3fe3ecdabe6fc-600.jpeg" 
+                     alt="Product 3" 
+                     class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition"
+                     onclick="openLightbox(this.src)">
+                <img src="https://cdn.hotishop.com/image/2022/10/75f5f6cec8571ef6f8f107b514b1ba6276776e23c89708370ec76355c1131018-600.jpeg" 
+                     alt="Product 4" 
+                     class="w-full h-48 object-cover rounded-lg cursor-pointer hover:scale-105 transition"
+                     onclick="openLightbox(this.src)">
+            </div>
+            
+            <div class="mt-8 text-center">
+                <video controls class="w-full max-w-2xl mx-auto rounded-lg shadow-lg">
+                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/2207520906746/p/1/e/6/t/10301/1100124172206.mp4?from=chrome" type="video/mp4">
+                    Browser Anda tidak mendukung video HTML5.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-cormorant text-4xl font-bold text-center mb-12" data-aos="fade-up">Fitur Unggulan</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cut text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-2">5 Kepala Fungsional</h3>
+                    <p class="text-gray-600">Cukur, trim, bersihkan wajih, dan pijat semua dalam satu alat</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-2">Tahan Air</h3>
+                    <p class="text-gray-600">IPX7 waterproof, bisa digunakan di kamar mandi dengan aman</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-battery-full text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-cormorant text-2xl font-bold mb-2">Baterai Tahan Lama</h3>
+                    <p class="text-gray-600">90 menit penggunaan hanya dengan 1.5 jam pengisian</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-xl p-6" data-aos="fade-right">
+                    <h3 class="font-cormorant text-2xl font-bold mb-4">Spesifikasi Teknis</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Bahan: ABS berkualitas tinggi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Power: 5W</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Input: 5V/1A</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Garansi: 1 minngu</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card rounded-xl p-6" data-aos="fade-left">
+                    <h3 class="font-cormorant text-2xl font-bold mb-4">Paket Isi</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-box text-blue-500 mr-2"></i>1x Electric Shaver</li>
+                        <li><i class="fas fa-box text-blue-500 mr-2"></i>5x Kepala Fungsional</li>
+                        <li><i class="fas fa-box text-blue-500 mr-2"></i>1x Kabel USB</li>
+                        <li><i class="fas fa-box text-blue-500 mr-2"></i>1x Manual Book</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="trust-badge" data-aos="zoom-in">
+                    <i class="fas fa-shipping-fast text-3xl text-green-500 mb-2"></i>
+                    <h4 class="font-semibold">Gratis Ongkir</h4>
+                    <p class="text-sm text-gray-600">Untuk pembelian 2 unit</p>
+                </div>
+                
+                <div class="trust-badge" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-shield-alt text-3xl text-blue-500 mb-2"></i>
+                    <h4 class="font-semibold">Garansi 1 Tahun</h4>
+                    <p class="text-sm text-gray-600">Jaminan kualitas</p>
+                </div>
+                
+                <div class="trust-badge" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-credit-card text-3xl text-purple-500 mb-2"></i>
+                    <h4 class="font-semibold">Bayar di Tempat</h4>
+                    <p class="text-sm text-gray-600">COD tersedia</p>
+                </div>
+                
+                <div class="trust-badge" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-rocket text-3xl text-red-500 mb-2"></i>
+                    <h4 class="font-semibold">Pengiriman Cepat</h4>
+                    <p class="text-sm text-gray-600">Hari ini juga dikirim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-cormorant text-4xl font-bold text-center mb-12" data-aos="fade-up">Testimoni Pelanggan</h2>
+            
+            <div class="relative">
+                <div class="testimonial-carousel" id="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/736x/72/b8/02/72b802941deeb7f80ccb0764479c052c.jpg" 
+                                 alt="igansyah" 
+                                 class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">igansyah</h4>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Alhamdulillah Paket datang dengan selamat.. Dan berfungsi dengan baik."</p>
+                        <img src="https://cdn.hotishop.com/image/82b08e23c49d069753b1c109a17ab8a693581d24-600.png" 
+                             alt="Review Media" 
+                             class="w-full h-32 object-cover rounded-lg cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/1200x/aa/03/d1/aa03d19aabcea796d1499a9c9783a54b.jpg" 
+                                 alt="abiw_eko" 
+                                 class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">abiw_eko</h4>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"sangat tajam tidak sakit iritasi aman sentosa semoga awet bertahan lama"</p>
+                        <img src="https://cdn.hotishop.com/image/2022/10/2afb00f36c8428a68f29787fe5454fe009d1b3227746da152bafde7ac0ee5860-600.jpeg" 
+                             alt="Review Media" 
+                             class="w-full h-32 object-cover rounded-lg cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card bg-white rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/1200x/c7/05/52/c7055237d559b66c71d54d8ed5a51edd.jpg" 
+                                 alt="hengky11" 
+                                 class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-semibold">hengky11</h4>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Alat cukur ini mempermudah pekerjaan mencukur. Hasilnya yg bagus dan nyaman dipakai."</p>
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Acdfd5f90f48e4efea3793dbcf700564eu.jpg_.webp" 
+                             alt="Review Media" 
+                             class="w-full h-32 object-cover rounded-lg cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <button onclick="prevTestimonial()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextTestimonial()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Dots -->
+            <div class="flex justify-center mt-6 space-x-2">
+                <button onclick="goToSlide(0)" class="w-2 h-2 bg-black rounded-full"></button>
+                <button onclick="goToSlide(1)" class="w-2 h-2 bg-gray-300 rounded-full"></button>
+                <button onclick="goToSlide(2)" class="w-2 h-2 bg-gray-300 rounded-full"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-cormorant text-4xl font-bold mb-8" data-aos="fade-up">Penawaran Spesial</h2>
+            
+            <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl p-8 max-w-md mx-auto" data-aos="zoom-in">
+                <div class="text-6xl font-bold">Diskon 35%</div>
+                <div class="text-2xl mt-4">
+                    <span class="line-through">Rp 349.000</span>
+                    <span class="text-4xl font-bold ml-4">Rp 225.000</span>
+                </div>
+                <div class="countdown-timer mt-6 inline-block">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span id="countdown">23:59:59</span>
+                </div>
+                <p class="text-sm mt-4 opacity-90">Hanya tersisa 21 unit!</p>
+            </div>
+            
+            <div class="mt-8">
+                <button onclick="scrollToOrder()" class="bg-black text-white px-12 py-4 rounded-full text-xl font-semibold btn-hover-effect">
+                    Dapatkan Sekarang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-cormorant text-4xl font-bold text-center mb-12" data-aos="fade-up">Pesan Sekarang</h2>
+            
+            <div class="ooef">
+                <form class="orderonline-embed-form" data-username="vera" data-product-slug="5-in-1-electric-shaver" data-product-id="68889fed362577575901e400" id="oo-embed-form-5-in-1-electric-shaver-8555" data-origin="orderonline">
+                    <div class="ooef-loader">
+                        <style>
+                            .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                            @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                            @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                            .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                            .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                            .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                            @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                            @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                        </style>
+                        <div aria-live="polite" role="status">
+                            <div>Loading...</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof-popup" id="social-proof">
+        <div class="flex items-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0GSIMHaGnZU2aTztjh9h9KjWOQspe0-qUMg&s" 
+                 alt="Customer" 
+                 class="w-10 h-10 rounded-full mr-3">
+            <div>
+                <p class="text-sm font-medium" id="social-proof-text"></p>
+                <p class="text-xs text-gray-500" id="social-proof-time"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div>
+                <div class="text-lg font-bold">Rp 225.000</div>
+                <div class="text-sm text-gray-600">Hemat Rp 124.000</div>
+            </div>
+            <button onclick="scrollToOrder()" class="bg-red-500 text-white px-8 py-3 rounded-full font-semibold">
+                Pesan Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll to order
+        function scrollToOrder() {
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.classList.contains('lightbox') || event.target.tagName === 'SPAN') {
+                document.getElementById('lightbox').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Testimonial carousel
+        let currentSlide = 0;
+        const carousel = document.getElementById('testimonial-carousel');
+        
+        function nextTestimonial() {
+            const cards = document.querySelectorAll('.testimonial-card');
+            if (window.innerWidth >= 1024 && currentSlide < cards.length - 3) {
+                currentSlide++;
+            } else if (window.innerWidth >= 768 && currentSlide < cards.length - 2) {
+                currentSlide++;
+            } else if (window.innerWidth < 768 && currentSlide < cards.length - 1) {
+                currentSlide++;
+            }
+            updateCarousel();
+        }
+        
+        function prevTestimonial() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+        
+        function goToSlide(slide) {
+            currentSlide = slide;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const offset = -currentSlide * (100 + 20); // 100% width + 20px margin
+            cards.forEach((card, index) => {
+                card.style.transform = `translateX(${offset}px)`;
+            });
+        }
+
+        // Auto-scroll testimonials
+        setInterval(() => {
+            const cards = document.querySelectorAll('.testimonial-card');
+            if (window.innerWidth >= 1024 && currentSlide < cards.length - 3) {
+                nextTestimonial();
+            } else if (window.innerWidth >= 768 && currentSlide < cards.length - 2) {
+                nextTestimonial();
+            } else if (window.innerWidth < 768 && currentSlide < cards.length - 1) {
+                nextTestimonial();
+            } else {
+                currentSlide = 0;
+                updateCarousel();
+            }
+        }, 5000);
+
+        // Social proof popup
+        const names = ['siesuriani', 'laila_sayankz', 'budidunhil78', 'ferdylepa', 'Putri', 'Maya Sari', 'Rani', 'Permata', 'Lestari F'];
+        const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+        
+        function showSocialProof() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const minutes = Math.floor(Math.random() * 15) + 1;
+            
+            document.getElementById('social-proof-text').textContent = `${name} dari ${city} baru saja memesan 5 In 1 Electric Shaver`;
+            document.getElementById('social-proof-time').textContent = `${minutes} menit yang lalu`;
+            
+            const popup = document.getElementById('social-proof');
+            popup.classList.add('show');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show social proof every 8 seconds
+        setInterval(showSocialProof, 8000);
+        
+        // Show after 2 seconds
+        setTimeout(showSocialProof, 2000);
+
+        // Sticky CTA
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const orderSection = document.getElementById('order');
+            const orderTop = orderSection.offsetTop;
+            
+            if (scrolled > 300 && scrolled < orderTop - 200) {
+                document.getElementById('sticky-cta').classList.add('show');
+            } else {
+                document.getElementById('sticky-cta').classList.remove('show');
+            }
+        });
+
+        // OrderOnline Integration
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                    if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://vera.orderonline.id');
+            ooe('init', '5f1a7807a9bf807d6c63d963', '68889fed362577575901e400', '68889fed362577575901e401', 'oo-embed-form-5-in-1-electric-shaver-8555', {
+                "mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true
+            });
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+</body>
+</html>
